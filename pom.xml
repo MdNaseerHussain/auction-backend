@@ -39,7 +39,7 @@
 		</dependency>
 	</dependencies>
 
-	<!-- <build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -47,6 +47,6 @@
 				<version>1.2.8.RELEASE</version>
 			</plugin>
 		</plugins>
-	</build> -->
+	</build>
 
 </project>
