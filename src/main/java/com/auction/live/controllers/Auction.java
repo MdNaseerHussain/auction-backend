@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-public class Hello {
+public class Auction {
 
-    @GetMapping("/")
-    public static String sayHi() {
-        return "Hello";
+    @GetMapping("/auction")
+    public static String auction() {
+        return "Auction Page";
     }
 
 }
