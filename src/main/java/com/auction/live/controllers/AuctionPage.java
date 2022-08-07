@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-public class Auction {
+public class AuctionPage {
 
     @GetMapping("/auction")
-    public static String auction() {
+    public String auction() {
         return "Auction Page";
     }
 
