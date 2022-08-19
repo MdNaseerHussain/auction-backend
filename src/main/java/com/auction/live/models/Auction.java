@@ -8,6 +8,7 @@ public class Auction {
     private BigInteger id;
     private String name, description;
     private ArrayList<Item> items;
+    // TODO: Add host user and participant users
 
     public BigInteger getId() {
         return id;
