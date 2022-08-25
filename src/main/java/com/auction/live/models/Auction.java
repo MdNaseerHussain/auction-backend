@@ -3,8 +3,13 @@ package com.auction.live.models;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Auction {
 
+    @Id
     private BigInteger id;
     private String name, description;
     private ArrayList<Item> items;
