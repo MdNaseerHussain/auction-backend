@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: file:env.properties
+  data:
+    mongodb:
+      database: auction
+      uri: ${MONGODB_URI}
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
