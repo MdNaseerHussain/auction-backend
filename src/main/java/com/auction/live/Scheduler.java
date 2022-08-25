@@ -1,16 +1,16 @@
-package com.auction.live.controllers;
+package com.auction.live;
 
+import java.util.Date;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Schedular {
-    int i=0;
+public class Scheduler {
     // 0 */5 * ? * * every 5 minutes
     // 0 55 11 25 8 ? date = 25-08 : 11:55
-    @Scheduled(cron="0 55 11 25 8 ?")
-    public void execute(){
-        System.out.printf("function executed\n");
+    @Scheduled(cron = "0 */1 * ? * *")
+    public void execute() {
+        System.out.println("Function executed at: " + new Date());
     }
 }
