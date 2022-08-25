@@ -1,12 +1,17 @@
 package com.auction.live.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.auction.live.models.Auction;
 import com.auction.live.models.Item;
+import com.auction.live.repository.AuctionsRepository;
 
 @Service
 public class CreateAuction {
+
+    @Autowired
+    private AuctionsRepository auctionsRepository;
 
     public boolean validateItem(Item item) {
         if (item.getName().isEmpty() || item.getName() == null || item.getBasePrice() <= 0
@@ -30,10 +35,8 @@ public class CreateAuction {
     }
 
     public Auction create(Auction auction) {
-        Auction newAuction = new Auction();
-        newAuction.setId(auction.getId()).setName(auction.getName()).setItems(auction.getItems())
-                .setDescription(auction.getDescription());
-        return newAuction;
+        auctionsRepository.save(auction);
+        return auction;
     }
 
 }
