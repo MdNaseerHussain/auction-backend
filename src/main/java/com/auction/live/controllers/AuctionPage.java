@@ -1,5 +1,6 @@
 package com.auction.live.controllers;
 
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuctionPage {
 
     @GetMapping("/auction")
-    public String auction() {
+    public String auction(OAuth2AuthenticationToken auth2AuthenticationToken) {
         return "Auction Page";
     }
 

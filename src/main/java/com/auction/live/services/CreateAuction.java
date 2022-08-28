@@ -5,13 +5,14 @@ import org.springframework.stereotype.Service;
 
 import com.auction.live.models.Auction;
 import com.auction.live.models.Item;
-import com.auction.live.repository.AuctionsRepository;
+import com.auction.live.models.User;
+import com.auction.live.repository.UserRepository;
 
 @Service
 public class CreateAuction {
 
     @Autowired
-    private AuctionsRepository auctionsRepository;
+    UserRepository userRepository;
 
     public boolean validateItem(Item item) {
         if (item.getName().isEmpty() || item.getName() == null || item.getBasePrice() <= 0
@@ -34,8 +35,9 @@ public class CreateAuction {
         return true;
     }
 
-    public Auction create(Auction auction) {
-        auctionsRepository.save(auction);
+    public Auction create(Auction auction, User user) {
+        user.getHostedAuctions().add(auction);
+        userRepository.save(user);
         return auction;
     }
 

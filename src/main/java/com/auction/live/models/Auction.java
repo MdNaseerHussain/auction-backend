@@ -2,18 +2,17 @@ package com.auction.live.models;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 public class Auction {
 
     @Id
     private BigInteger id;
     private String name, description;
     private ArrayList<Item> items;
-    // TODO: Add host user and participant users
+    private List<String> invitees;
 
     public BigInteger getId() {
         return id;
@@ -48,6 +47,15 @@ public class Auction {
 
     public Auction setItems(ArrayList<Item> items) {
         this.items = items;
+        return this;
+    }
+
+    public List<String> getInvitees() {
+        return invitees;
+    }
+
+    public Auction setInvitees(List<String> invitees) {
+        this.invitees = invitees;
         return this;
     }
 
