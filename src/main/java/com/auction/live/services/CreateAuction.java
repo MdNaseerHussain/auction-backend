@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.auction.live.models.Auction;
 import com.auction.live.models.Item;
-import com.auction.live.models.User;
 import com.auction.live.repository.UserRepository;
 
 @Service
@@ -35,9 +34,7 @@ public class CreateAuction {
         return true;
     }
 
-    public Auction create(Auction auction, User user) {
-        user.getHostedAuctions().add(auction);
-        userRepository.save(user);
+    public Auction create(Auction auction) {
         return auction;
     }
 
