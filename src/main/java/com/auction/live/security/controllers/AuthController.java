@@ -42,7 +42,7 @@ public class AuthController {
                     .authenticate(
                             new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         } catch (BadCredentialsException err) {
-            throw new Exception("Invalid Username or Password", err);
+            throw new Exception("Invalid Username or Password");
         }
         final UserDetails userDetails = userAuthService.loadUserByUsername(request.getUsername());
         final String token = jwtUtils.generateToken(userDetails);
